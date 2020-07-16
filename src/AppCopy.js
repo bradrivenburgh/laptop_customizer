@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import FeatureForm from './FeatureForm/FeatureForm';
 import MainSummary from './MainSummary/MainSummary';
-
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
-import slugify from 'slugify';
-
 import './App.css';
 
 // This object will allow us to
@@ -46,17 +41,16 @@ class AppCopy extends Component {
   };
 
   render() {
-    return(
+    return (
       <div className="App">
       <header>
         <h1>ELF Computing | Laptops</h1>
       </header>
       <main>
         <FeatureForm features={this.props.features} />
-        <MainSummary />
+        {/* <MainSummary /> */}
       </main>
     </div>
-
     );
   }
 }
