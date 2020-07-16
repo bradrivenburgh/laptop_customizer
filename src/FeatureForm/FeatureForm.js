@@ -5,7 +5,7 @@ export default class FeatureForm extends Component {
     static defaultProps = {
         features: {}
     }
-    
+
     render() {
         const features = Object.keys(this.props.features).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
@@ -17,7 +17,7 @@ export default class FeatureForm extends Component {
                     className="feature"
                     selected={this.props.selected} 
                     key={featureHash}
-                    handleUpdateFeature={this.props.handleUpdateFeature}
+                    updateFeature={this.props.updateFeature}
                 />
             );
         });    

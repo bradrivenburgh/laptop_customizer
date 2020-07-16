@@ -13,7 +13,7 @@ export default class Feature extends Component {
             item={item}
             key={itemHash}
             id={itemHash}
-            handleUpdateFeature={this.props.handleUpdateFeature}
+            updateFeature={this.props.updateFeature}
           />
         );
       });
