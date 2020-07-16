@@ -3,7 +3,7 @@ import FeatureForm from "./FeatureForm/FeatureForm";
 import MainSummary from "./MainSummary/MainSummary";
 import "./App.css";
 
-class AppCopy extends Component {
+class App extends Component {
   state = {
     selected: {
       Processor: {
@@ -57,4 +57,4 @@ class AppCopy extends Component {
   }
 }
 
-export default AppCopy;
+export default App;
