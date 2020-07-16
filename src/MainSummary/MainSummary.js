@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
-import SummaryList from '../SummaryList/SummaryList';
+import React, { Component } from "react";
+import SummaryList from "../SummaryList/SummaryList";
+import SummaryTotal from "../SummaryTotal/SummaryTotal";
 
 export default class MainSummary extends Component {
-    render(){
+  render() {
+    const summary = Object.keys(this.props.selected).map((feature, idx) => {
+      const featureHash = feature + "-" + idx;
+      const selectedOption = this.props.selected[feature];
 
+      return (
+        <SummaryList
+          key={featureHash}
+          id={featureHash}
+          selected={selectedOption}
+          feature={feature}
+        />
+      );
+    });
 
-        return(
-            <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-          </section>
-        );
-    }
+    return (
+      <section className='main__summary'>
+        <h2>Your cart</h2>
+        {summary}
+        <SummaryTotal total={this.props.total} />
+      </section>
+    );
+  }
 }
-
-// For SummaryTotal
-{/* <div className="summary__total">
-<div className="summary__total__label">Total</div>
-<div className="summary__total__value">
-  {USCurrencyFormat.format(total)}
-</div>
-</div> */}
