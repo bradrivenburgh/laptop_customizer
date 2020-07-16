@@ -3,13 +3,6 @@ import FeatureForm from './FeatureForm/FeatureForm';
 import MainSummary from './MainSummary/MainSummary';
 import './App.css';
 
-// This object will allow us to
-// easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
-
 class AppCopy extends Component {
   state = {
     selected: {
@@ -47,7 +40,10 @@ class AppCopy extends Component {
         <h1>ELF Computing | Laptops</h1>
       </header>
       <main>
-        <FeatureForm features={this.props.features} />
+        <FeatureForm
+          selected={this.state.selected}
+          features={this.props.features} 
+          handleUpdateFeature={this.updateFeature}/>
         {/* <MainSummary /> */}
       </main>
     </div>
