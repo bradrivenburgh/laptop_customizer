@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Feature from '../Feature/Feature';
 
 export default class FeatureForm extends Component {
+    static defaultProps = {
+        features: {}
+    }
+    
     render() {
         const features = Object.keys(this.props.features).map((feature, idx) => {
             const featureHash = feature + '-' + idx;

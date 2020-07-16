@@ -29,17 +29,3 @@ export default class Feature extends Component {
         );
     }
 }
-
-// const options = this.props.features[feature].map(item => {
-//   const itemHash = slugify(JSON.stringify(item));
-//   return (
-//       <FeatureItem 
-//           key={itemHash} 
-//           className="feature__item"
-//           id={itemHash} 
-//           name={slugify(feature)}
-//           checked={item.name === this.state.selected[feature].name}
-//           handleUpdateFeature={this.updateFeature(feature, item)}
-//           htmlFor={itemHash}
-//       />);
-// });
