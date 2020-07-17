@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FeatureForm from "./FeatureForm/FeatureForm";
-import MainSummary from "./MainSummary/MainSummary";
+import Customizer from './Customizer/Customizer';
+import Cart from './Cart/Cart';
 import "./App.css";
 
 class App extends Component {
@@ -45,12 +45,12 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <FeatureForm
+          <Customizer
             selected={this.state.selected}
             features={this.props.features}
             updateFeature={this.updateFeature}
           />
-          <MainSummary selected={this.state.selected} total={total} />
+          <Cart selected={this.state.selected} total={total} />
         </main>
       </div>
     );

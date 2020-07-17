@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FeatureItem from "../FeatureItem/FeatureItem";
+import Option from "../Customizer/Option";
 import slugify from "slugify";
 
 export default class Feature extends Component {
@@ -7,7 +7,7 @@ export default class Feature extends Component {
     const options = this.props.features[this.props.feature].map((item) => {
       const itemHash = slugify(JSON.stringify(item));
       return (
-        <FeatureItem
+        <Option
           feature={this.props.feature}
           selected={this.props.selected}
           item={item}

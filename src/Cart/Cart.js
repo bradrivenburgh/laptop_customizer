@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SummaryList from "../SummaryList/SummaryList";
-import SummaryTotal from "../SummaryTotal/SummaryTotal";
+import CartItems from "../Cart/CartItems";
+import CartTotal from "../Cart/CartTotal";
 
 export default class MainSummary extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class MainSummary extends Component {
       const selectedOption = this.props.selected[feature];
 
       return (
-        <SummaryList
+        <CartItems
           key={featureHash}
           id={featureHash}
           selected={selectedOption}
@@ -22,7 +22,7 @@ export default class MainSummary extends Component {
       <section className='main__summary'>
         <h2>Your cart</h2>
         {summary}
-        <SummaryTotal total={this.props.total} />
+        <CartTotal total={this.props.total} />
       </section>
     );
   }
