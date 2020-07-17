@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Feature from "../Customizer/Feature";
+import './Customizer.css';
 
 export default class FeatureForm extends Component {
   static defaultProps = {
