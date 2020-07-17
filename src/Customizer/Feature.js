@@ -4,16 +4,17 @@ import slugify from "slugify";
 
 export default class Feature extends Component {
   render() {
-    const options = this.props.features[this.props.feature].map((item) => {
+    const options = this.props.allFeatures[this.props.feature].map((item) => {
       const itemHash = slugify(JSON.stringify(item));
       return (
         <Option
           feature={this.props.feature}
-          selected={this.props.selected}
+          name={slugify(this.props.feature)}
+          allSelectedOptions={this.props.allSelectedOptions}
           item={item}
           key={itemHash}
           id={itemHash}
-          updateFeature={this.props.updateFeature}
+          onUpdateFeature={this.props.onUpdateFeature}
         />
       );
     });

@@ -2,23 +2,23 @@ import React, { Component } from "react";
 import Feature from "../Customizer/Feature";
 import './Customizer.css';
 
-export default class FeatureForm extends Component {
+export default class Customizer extends Component {
   static defaultProps = {
     features: {},
   };
 
   render() {
-    const features = Object.keys(this.props.features).map((feature, idx) => {
+    const renderAllFeatures = Object.keys(this.props.allFeatures).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       return (
         <Feature
-          features={this.props.features}
+          allFeatures={this.props.allFeatures} 
           feature={feature}
+          allSelectedOptions={this.props.allSelectedOptions}
           idx={idx}
           className='feature'
-          selected={this.props.selected}
           key={featureHash}
-          updateFeature={this.props.updateFeature}
+          onUpdateFeature={this.props.onUpdateFeature}
         />
       );
     });
@@ -26,7 +26,7 @@ export default class FeatureForm extends Component {
     return (
       <form className='main__form'>
         <h2>Customize your laptop</h2>
-        {features}
+        {renderAllFeatures}
       </form>
     );
   }

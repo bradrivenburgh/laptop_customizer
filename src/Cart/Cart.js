@@ -3,18 +3,24 @@ import CartItems from "../Cart/CartItems";
 import CartTotal from "../Cart/CartTotal";
 import './Cart.css';
 
-export default class MainSummary extends Component {
+export default class Cart extends Component {
   render() {
-    const summary = Object.keys(this.props.selected).map((feature, idx) => {
+    const USCurrencyFormat = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
+    const cartSummary = Object.keys(this.props.allSelectedOptions).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
-      const selectedOption = this.props.selected[feature];
+      const selectedOption = this.props.allSelectedOptions[feature];
 
       return (
         <CartItems
           key={featureHash}
           id={featureHash}
-          selected={selectedOption}
           feature={feature}
+          selectedOption={selectedOption}
+          cost={USCurrencyFormat.format(selectedOption.cost)}
         />
       );
     });
@@ -22,8 +28,9 @@ export default class MainSummary extends Component {
     return (
       <section className='main__summary'>
         <h2>Your cart</h2>
-        {summary}
-        <CartTotal total={this.props.total} />
+        {cartSummary}
+        <CartTotal 
+          total={USCurrencyFormat.format(this.props.total)} />
       </section>
     );
   }

@@ -4,6 +4,7 @@ import Cart from './Cart/Cart';
 import "./App.css";
 
 class App extends Component {
+  //The beginning state; these features are preselected when the app loads
   state = {
     selected: {
       Processor: {
@@ -25,6 +26,8 @@ class App extends Component {
     },
   };
 
+  //Callback prop that controls what feature option is selected in the
+  //customizer component.
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -46,11 +49,11 @@ class App extends Component {
         </header>
         <main>
           <Customizer
-            selected={this.state.selected}
-            features={this.props.features}
-            updateFeature={this.updateFeature}
+            allFeatures={this.props.allFeatures}
+            allSelectedOptions={this.state.selected}
+            onUpdateFeature={this.updateFeature}
           />
-          <Cart selected={this.state.selected} total={total} />
+          <Cart allSelectedOptions={this.state.selected} total={total} />
         </main>
       </div>
     );
