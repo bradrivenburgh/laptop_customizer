@@ -6,7 +6,6 @@ export default class Option extends Component {
     const feature = this.props.feature;
     const item = this.props.item;
     const allSelectedOptions = this.props.allSelectedOptions;
-    const name = this.props.name;
 
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -20,7 +19,6 @@ export default class Option extends Component {
           type='radio'
           checked={item.name === allSelectedOptions[feature].name}
           id={itemHash}
-          name={name}
           onChange={(e) => this.props.onUpdateFeature(feature, item)}
         />
         <label htmlFor={itemHash} className='feature__label'>
