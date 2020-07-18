@@ -10,7 +10,7 @@ export default class Feature extends Component {
       return (
         <Option
           feature={feature}
-          name={slugify(feature)}
+          name={slugify(feature)} 
           allSelectedOptions={this.props.allSelectedOptions}
           item={item}
           key={itemHash}

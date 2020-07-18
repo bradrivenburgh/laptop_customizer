@@ -10,7 +10,7 @@ export default class Cart extends Component {
       style: "currency",
       currency: "USD",
     });
-    
+    //Map over allSelectedOptions to populate cart
     const cartSummary = Object.keys(this.props.allSelectedOptions).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = this.props.allSelectedOptions[feature];

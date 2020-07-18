@@ -8,12 +8,15 @@ export default class Customizer extends Component {
   };
 
   render() {
+    //Map over allFeatures to populate the Customizer with all features and options
     const renderAllFeatures = Object.keys(this.props.allFeatures).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       return (
         <Feature
           className='feature'
-          allFeatures={this.props.allFeatures} 
+          //Pass allFeatures prop to Feature to render all feature Options
+          allFeatures={this.props.allFeatures}
+          //Drilling allSelectedOptions down to Options component
           allSelectedOptions={this.props.allSelectedOptions}
           feature={feature}
           key={featureHash}

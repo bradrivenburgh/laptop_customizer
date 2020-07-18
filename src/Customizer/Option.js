@@ -15,7 +15,7 @@ export default class Option extends Component {
         <input
           className='feature__option'
           name='this.props.name'
-          type='radio'
+          type='radio' 
           checked={item.name === allSelectedOptions[feature].name}
           id={itemHash}
           onChange={(e) => this.props.onUpdateFeature(feature, item)}
