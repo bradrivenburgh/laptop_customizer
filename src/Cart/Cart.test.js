@@ -39,21 +39,21 @@ const allSelectedOptions = {
 
 describe("Cart Component", () => {
     it("renders without crashing", () => {
-        const wrapper = shallow(<Cart 
+        shallow(<Cart 
             allSelectedOptions={allSelectedOptions}/>);
     });
 });
 
 describe("CartItems Component", () => {
     it("renders without crashing", () => {
-        const wrapper = shallow(<CartItems 
+        shallow(<CartItems 
             selectedOption={selectedOption}/>);
     });
 });
 
 describe("CartTotal Component", () => {
     it("renders without crashing", () => {
-        const wrapper = shallow(<CartTotal 
+        shallow(<CartTotal 
             total={total}/>);
     });
 });

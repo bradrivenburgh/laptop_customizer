@@ -62,14 +62,14 @@ const FEATURES = {
 
 describe("Customizer Component", () => {
   it("renders without crashing", () => {
-    const wrapper = shallow(<Customizer         
+    shallow(<Customizer         
         allFeatures={FEATURES}/>)
   });
 });
 
 describe("Feature Component", () => {
     it("renders without crashing", () => {
-        const wrapper = shallow(<Feature 
+        shallow(<Feature 
             allFeatures={FEATURES} 
             feature="Processor"/>)
     })
@@ -77,7 +77,7 @@ describe("Feature Component", () => {
 
 describe("Option Component", () => {
     it("renders without crashing", () => {
-        const wrapper = shallow(<Option 
+        shallow(<Option 
             item={item}
             allSelectedOptions={allSelectedOptions}
             feature="Processor"/>)
