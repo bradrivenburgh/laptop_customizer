@@ -14,7 +14,7 @@ export default class Option extends Component {
       <div key={itemHash} className='feature__item'>
         <input
           className='feature__option'
-          name='this.props.name'
+          name={this.props.name}
           type='radio' 
           checked={item.name === allSelectedOptions[feature].name}
           id={itemHash}
