@@ -12,11 +12,10 @@ export default class Customizer extends Component {
       const featureHash = feature + "-" + idx;
       return (
         <Feature
-          allFeatures={this.props.allFeatures} 
-          feature={feature}
-          allSelectedOptions={this.props.allSelectedOptions}
-          idx={idx}
           className='feature'
+          allFeatures={this.props.allFeatures} 
+          allSelectedOptions={this.props.allSelectedOptions}
+          feature={feature}
           key={featureHash}
           onUpdateFeature={this.props.onUpdateFeature}
         />

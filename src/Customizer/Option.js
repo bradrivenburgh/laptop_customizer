@@ -3,19 +3,20 @@ import React, { Component } from "react";
 export default class Option extends Component {
   render() {
     const itemHash = this.props.id;
+    const featureTitle = this.props.featureTitle
     const feature = this.props.feature;
     const item = this.props.item;
     const allSelectedOptions = this.props.allSelectedOptions;
-
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     });
-
+    console.log(feature===featureTitle)
     return (
       <div key={itemHash} className='feature__item'>
         <input
           className='feature__option'
+          name='this.props.name'
           type='radio'
           checked={item.name === allSelectedOptions[feature].name}
           id={itemHash}
