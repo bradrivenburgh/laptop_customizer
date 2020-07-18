@@ -5,11 +5,12 @@ import './Cart.css';
 
 export default class Cart extends Component {
   render() {
+    //Converts number to a US currency format
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     });
-
+    
     const cartSummary = Object.keys(this.props.allSelectedOptions).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = this.props.allSelectedOptions[feature];

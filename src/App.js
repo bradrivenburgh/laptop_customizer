@@ -53,7 +53,9 @@ class App extends Component {
             allSelectedOptions={this.state.selected}
             onUpdateFeature={this.updateFeature}
           />
-          <Cart allSelectedOptions={this.state.selected} total={total} />
+          <Cart 
+            allSelectedOptions={this.state.selected} 
+            total={total} />
         </main>
       </div>
     );
