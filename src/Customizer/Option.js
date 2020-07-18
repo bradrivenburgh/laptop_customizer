@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class Option extends Component {
   render() {
     const itemHash = this.props.id;
-    const featureTitle = this.props.featureTitle
     const feature = this.props.feature;
     const item = this.props.item;
     const allSelectedOptions = this.props.allSelectedOptions;
@@ -11,7 +10,6 @@ export default class Option extends Component {
       style: "currency",
       currency: "USD",
     });
-    console.log(feature===featureTitle)
     return (
       <div key={itemHash} className='feature__item'>
         <input
